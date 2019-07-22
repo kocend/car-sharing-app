@@ -4,6 +4,7 @@ import { Client } from '../models/client';
 import { LoanInfo } from '../models/loan-info';
 import { VehicleType } from 'src/models/vehicle-type.enum';
 import { LoanStatus } from 'src/models/loan-status.enum';
+import { PassengerCar } from 'src/models/passenger-car';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
 
-    let vehicle = new Vehicle();
+    let vehicle = new PassengerCar();
     vehicle.car_mileage_in_kilometers = 0;
     vehicle.color = "red";
     vehicle.power = 300;
