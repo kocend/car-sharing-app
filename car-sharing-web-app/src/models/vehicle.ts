@@ -6,6 +6,7 @@ export abstract class Vehicle {
    public car_mileage_in_kilometers: number;
    public seats: number;
    public power: number;
+   public weight: number;
    public hasAirConditioning: boolean;
 
    //fajnie jakby był jakiś enum

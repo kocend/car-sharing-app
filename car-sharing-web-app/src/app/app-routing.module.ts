@@ -21,13 +21,4 @@ const routes: Routes = [];
   exports: [RouterModule]
 })
 
-/*
-[
-    { path: 'loan-desktop', component: LoanDesktopComponent },
-    { path: 'cars-list', component: CarsListComponent },
-    { path: 'clients-list', component: ClientsListComponent },
-    { path: 'loan-list', component: LoanListComponent },
-    { path: 'loan-form', component: LoanFormComponent },
-]
-*/
 export class AppRoutingModule { }

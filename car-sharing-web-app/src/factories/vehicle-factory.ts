@@ -8,8 +8,4 @@ export abstract class VehicleFactory {
     constructor( type: VehicleType){
 
     }
-
-    protected fillBaseData(vehicle: Vehicle){
-        vehicle.weight = this.getMinWeight()+Math.random()*(this.getMaxWeight()-this.getMinWeight());
-    }
 }
