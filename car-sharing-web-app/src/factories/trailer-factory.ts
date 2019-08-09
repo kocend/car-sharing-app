@@ -17,7 +17,7 @@ export class TrailerFactory{
             case 3: trailer.hookType = HookType.HeavyTruck;
             break;
         }
-        trailer.maxOverload = 101 + Math.random()*1000;
+        trailer.maxOverload = Math.floor(101 + Math.random()*1000);
         trailer.tiresCount = Math.floor(1 + Math.random()*2)*2;
         return trailer;
     }

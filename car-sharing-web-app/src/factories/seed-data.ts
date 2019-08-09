@@ -20,19 +20,33 @@ export class SeedData {
         let passengerCarFactory = new PassengerCarFactory();
         let truckFactory = new TruckFactory();
 
+        //console.log("amount: "+ amount);
+
+        //console.log("beginning od seed function");
+
         for(let i = 0; i < amount; i++){
-            let type = Math.random()*4;
+            //console.log("beginning of for ");
+            let type = Math.floor(Math.random()*4);
+            //console.log("generated number: "+type);
             switch(type){
                 case 0: this.repository.add(busFactory.create());
+                //console.log("case 0");
                 break;
                 case 1: this.repository.add(motorcycleFactory.create());
+                //console.log("case 1");
                 break;
                 case 2: this.repository.add(passengerCarFactory.create());
+                //console.log("case 2");
                 break;
                 case 3: this.repository.add(truckFactory.create());
+                //console.log("case 3");
                 break;
             }
         }
+
+        console.log("amount od elements in repo: " + this.repository.getAll().length);
+
+        //console.log("end of seed function");
     }
 
 
