@@ -3,7 +3,10 @@ import { VehicleType } from 'src/models/vehicle-type.enum';
 import { Motorcycle } from 'src/models/motorcycle';
 import { ColorFactory } from './color-factory';
 import { RegistrationFactory } from './registration-factory';
+import { Injectable } from '@angular/core';
 
+
+@Injectable()
 export class MotorcycleFactory extends VehicleFactory {
     protected getMinWeight(): number {
         return 50;

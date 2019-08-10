@@ -3,7 +3,9 @@ import { VehicleType } from 'src/models/vehicle-type.enum';
 import { Truck } from 'src/models/truck';
 import { ColorFactory } from './color-factory';
 import { RegistrationFactory } from './registration-factory';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class TruckFactory extends VehicleFactory {
     protected getMinWeight(): number {
         return 3000;

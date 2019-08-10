@@ -4,21 +4,19 @@ import { BusFactory } from './bus-factory';
 import { MotorcycleFactory } from './motorcycle-factory';
 import { PassengerCarFactory } from './passenger-car-factory';
 import { TruckFactory } from './truck-factory';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class SeedData {
-    
-    private repository: VehicleRepository;
 
-    constructor(repository: VehicleRepository){
-        this.repository = repository;
+    constructor(private readonly repository: VehicleRepository,
+                private readonly busFactory: BusFactory,
+                private readonly motorcycleFactory: MotorcycleFactory,
+                private readonly passengerCarFactory: PassengerCarFactory,
+                private readonly truckFactory: TruckFactory){
     }
 
     public seed(amount: number): void{
-
-        let busFactory = new BusFactory();
-        let motorcycleFactory = new MotorcycleFactory();
-        let passengerCarFactory = new PassengerCarFactory();
-        let truckFactory = new TruckFactory();
 
         //console.log("amount: "+ amount);
 
@@ -29,16 +27,16 @@ export class SeedData {
             let type = Math.floor(Math.random()*4);
             //console.log("generated number: "+type);
             switch(type){
-                case 0: this.repository.add(busFactory.create());
+                case 0: this.repository.add(this.busFactory.create());
                 //console.log("case 0");
                 break;
-                case 1: this.repository.add(motorcycleFactory.create());
+                case 1: this.repository.add(this.motorcycleFactory.create());
                 //console.log("case 1");
                 break;
-                case 2: this.repository.add(passengerCarFactory.create());
+                case 2: this.repository.add(this.passengerCarFactory.create());
                 //console.log("case 2");
                 break;
-                case 3: this.repository.add(truckFactory.create());
+                case 3: this.repository.add(this.truckFactory.create());
                 //console.log("case 3");
                 break;
             }

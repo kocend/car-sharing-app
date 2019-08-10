@@ -1,7 +1,9 @@
 import { ILendable } from 'src/models/ilendable';
 import { LendStatus } from 'src/models/lend-status.enum';
 import { Subject, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class LendService {
 
     private  onObjectLendedEvent: Subject<ILendable> = new Subject<ILendable>();

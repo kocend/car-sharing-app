@@ -2,7 +2,8 @@ import { LendService } from './lend-service';
 import { ILendable } from 'src/models/ilendable';
 import { VehicleService } from './vehicle-service';
 import { TrailerService } from './trailer-service';
-import { Vehicle } from 'src/models/vehicle';
+import { Injectable } from '@angular/core';
+
 
 export class LoggerService {
 
