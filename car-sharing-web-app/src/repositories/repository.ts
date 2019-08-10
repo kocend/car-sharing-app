@@ -9,6 +9,10 @@ export abstract class Repository<T> {
         this.items.push(item);
     }
 
+    public delete(item: T): void{
+        //TODO body of this function
+    }
+
     public deleteLastAddedElement():void{
         this.items.pop();
     }

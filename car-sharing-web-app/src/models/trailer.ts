@@ -3,6 +3,9 @@ import { ILendable } from './ilendable';
 
 
 export class Trailer implements ILendable {
+    public getName(): string {
+        return "Trailer";
+    }
     lendStatus: import("./lend-status.enum").LendStatus;
     lendCost: number;
     

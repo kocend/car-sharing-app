@@ -3,6 +3,9 @@ import { Colors } from './colors.enum';
 import { ILendable } from './ilendable';
 
 export abstract class Vehicle implements ILendable {
+   public getName(): string {
+      return "Vehicle";
+   }
    lendStatus: import("./lend-status.enum").LendStatus;
    lendCost: number;
    
