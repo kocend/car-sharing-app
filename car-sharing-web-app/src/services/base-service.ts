@@ -1,9 +1,7 @@
 import { Subject, Observable } from 'rxjs';
-import { ILendable } from 'src/models/ilendable';
 import { Repository } from 'src/repositories/repository';
-import { Injectable } from '@angular/core';
 
-@Injectable()
+
 export abstract class BaseService<T> {
 
     private onBeforeObjectAddEvent: Subject<T> = new Subject<T>();

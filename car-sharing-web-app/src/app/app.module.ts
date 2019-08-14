@@ -16,6 +16,7 @@ import { BusFactory } from 'src/factories/bus-factory';
 import { MotorcycleFactory } from 'src/factories/motorcycle-factory';
 import { PassengerCarFactory } from 'src/factories/passenger-car-factory';
 import { TruckFactory } from 'src/factories/truck-factory';
+import { SeedData } from 'src/factories/seed-data';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TruckFactory } from 'src/factories/truck-factory';
     { provide: BusFactory, useClass: BusFactory },
     { provide: MotorcycleFactory, useClass: MotorcycleFactory },
     { provide: PassengerCarFactory, useClass: PassengerCarFactory },
-    { provide: TruckFactory, useClass: TruckFactory }
+    { provide: TruckFactory, useClass: TruckFactory },
+    { provide: SeedData, useClass: SeedData }
   ],
 
   bootstrap: [AppComponent]

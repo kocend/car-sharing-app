@@ -14,6 +14,7 @@ import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientsListComponent } from './clients-list/clients-list.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { RouterModule } from '@angular/router';
+import { DataTablesModule } from 'angular-datatables';
 
 
 
@@ -35,7 +36,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    DataTablesModule
   ],
   exports: [
     CommonModule,
