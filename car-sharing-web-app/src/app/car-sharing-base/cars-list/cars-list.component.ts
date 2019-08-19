@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { VehicleRepository } from 'src/repositories/vehicle-repository';
+import { PassengerCar } from 'src/models/passenger-car';
+import { VehicleType } from 'src/models/vehicle-type.enum';
+import { Vehicle } from 'src/models/vehicle';
 
 @Component({
   selector: 'app-cars-list',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsListComponent implements OnInit {
 
-  constructor() { }
+  private vehicleList: Vehicle[];
+
+  constructor(private readonly vehicleRepo: VehicleRepository) {
+    this.vehicleList = vehicleRepo.getAll();
+   }
 
   ngOnInit() {
+    this.vehicleList.sort();
   }
 
 }
