@@ -1,5 +1,30 @@
 <p>cars-list works!</p>
 
-<table datatable [dtOptions]="dtOptions"
-                 [dtTrigger]="dtTrigger"
-                 class="row-border hover"></table>
+<table class="table table-bordered">
+    <thead class="table table-dark">
+        <tr>
+            <th>index</th>
+            <th>type</th>
+            <th>registration number</th>
+            <th>color</th>
+            <th>car mileage in kilometers</th>
+            <th>seats</th>
+            <th>power</th>
+            <th>weight</th>
+            <th>air conditioning</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicle of vehicleList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{vehicle.type}}</td>
+            <td>{{vehicle.registration_number}}</td>
+            <td>{{vehicle.color}}</td>
+            <td>{{vehicle.car_mileage_in_kilometers}}</td>
+            <td>{{vehicle.seats}}</td>
+            <td>{{vehicle.power}}</td>
+            <td>{{vehicle.weight}}</td>
+            <td>{{vehicle.hasAirConditioning}}</td>
+        </tr>
+    </tbody>
+</table>
