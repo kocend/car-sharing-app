@@ -10,6 +10,7 @@ import { LoanListComponent } from './loan-list/loan-list.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { CarFormComponent } from './car-form/car-form.component';
 import { CarsListComponent } from './cars-list/cars-list.component';
+import { CarsOverviewComponent } from './cars-overview/cars-overview.component';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientsListComponent } from './clients-list/clients-list.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
@@ -30,9 +31,10 @@ import { DataTablesModule } from 'angular-datatables';
     CarDetailsComponent,
     CarFormComponent,
     CarsListComponent,
+    CarsOverviewComponent,
     ClientFormComponent,
     ClientsListComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { DataTablesModule } from 'angular-datatables';
     CarDetailsComponent,
     CarFormComponent,
     CarsListComponent,
+    CarsOverviewComponent,
     ClientFormComponent,
     ClientsListComponent,
     NavigationBarComponent

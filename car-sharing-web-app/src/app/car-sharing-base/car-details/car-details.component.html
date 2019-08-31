@@ -1,1 +1,23 @@
-<p>car-details works!</p>
+
+
+<table class="table table-bordered">
+        <thead class="table table-dark">
+            <tr>
+                <th>vehicle details</th>
+            </tr>
+        </thead>
+        <tbody>
+                <div *ngIf="vehicle != null">
+                        <ul>
+                            <li>type: <b>{{vehicle.type}}</b></li>
+                            <li>registration number: <b>{{vehicle.registration_number}}</b></li>
+                            <li>color: <b>{{vehicle.color}}</b></li>
+                            <li>car mileage: <b>{{vehicle.car_mileage_in_kilometers}}</b> kilometers</li>
+                            <li>number of seats: <b>{{vehicle.seats}}</b></li>
+                            <li>power: <b>{{vehicle.power}}</b> horse power</li>
+                            <li>weight: <b>{{vehicle.weight}}</b> kilograms</li>
+                            <li>has air conditioning: <b>{{vehicle.hasAirConditioning}}</b></li>
+                        </ul>
+                    </div>
+        </tbody>
+    </table>

@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { VehicleRepository } from 'src/repositories/vehicle-repository';
-import { PassengerCar } from 'src/models/passenger-car';
-import { VehicleType } from 'src/models/vehicle-type.enum';
 import { Vehicle } from 'src/models/vehicle';
 
 @Component({
@@ -12,9 +10,18 @@ import { Vehicle } from 'src/models/vehicle';
 export class CarsListComponent implements OnInit {
 
   private vehicleList: Vehicle[];
+  private selectedRow: Number;
+  @Output() clickedVehicle = new EventEmitter<Vehicle>();
+
 
   constructor(private readonly vehicleRepo: VehicleRepository) {
     this.vehicleList = vehicleRepo.getAll();
+   }
+
+   private onClickedRow(index){
+      this.selectedRow = index;
+      this.clickedVehicle.emit(this.vehicleList[index]);
+      console.log(index + "clicked");
    }
 
   ngOnInit() {

@@ -6,7 +6,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarSharingBaseModule } from './car-sharing-base/car-sharing-base.module';
-import { Repository } from 'src/repositories/repository';
 import { VehicleRepository } from 'src/repositories/vehicle-repository';
 import { TrailerRepository } from 'src/repositories/trailer-repository';
 import { VehicleService } from 'src/services/vehicle-service';

@@ -1,0 +1,10 @@
+
+
+<div class="row">
+    <div class="col">
+        <app-cars-list (clickedVehicle)="onVehicleSelected($event)"></app-cars-list>
+    </div>
+    <div class="col">
+        <app-car-details [vehicle]="selectedVehicle"></app-car-details>
+    </div>
+</div>
