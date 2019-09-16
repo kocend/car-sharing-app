@@ -16,6 +16,10 @@ import { ClientsListComponent } from './clients-list/clients-list.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { RouterModule } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
+import { PassengerDetailsComponent } from './passenger-details/passenger-details.component';
+import { BusDetailsComponent } from './bus-details/bus-details.component';
+import { MotorcycleDetailsComponent } from './motorcycle-details/motorcycle-details.component';
+import { TruckDetailsComponent } from './truck-details/truck-details.component';
 
 
 
@@ -35,6 +39,10 @@ import { DataTablesModule } from 'angular-datatables';
     ClientFormComponent,
     ClientsListComponent,
     NavigationBarComponent,
+    PassengerDetailsComponent,
+    BusDetailsComponent,
+    MotorcycleDetailsComponent,
+    TruckDetailsComponent,
   ],
   imports: [
     CommonModule,
