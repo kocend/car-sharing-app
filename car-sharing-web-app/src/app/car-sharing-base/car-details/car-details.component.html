@@ -5,7 +5,10 @@
         </tr>
     </thead>
     <tbody>
-        <div *ngIf="vehicle != null">
+        <div *ngIf="vehicle != null" class="rounded" [ngClass]="{'brown': vehicle.type=='Bus',
+                                                 'blue': vehicle.type=='PassengerCar',
+                                                 'yellow': vehicle.type=='Motorcycle',
+                                                 'green': vehicle.type=='Truck'}">
             <ul>
                 <li>type: <b>{{vehicle.type}}</b></li>
                 <li>registration number: <b>{{vehicle.registration_number}}</b></li>
@@ -17,8 +20,10 @@
                 <li>has air conditioning: <b>{{vehicle.hasAirConditioning}}</b></li>
                 <div [ngSwitch]="vehicle.type">
                     <app-bus-details *ngSwitchCase="'Bus'" [bus]="vehicle"></app-bus-details>
-                    <app-motorcycle-details *ngSwitchCase="'Motorcycle'" [motorcycle]="vehicle"></app-motorcycle-details>
-                    <app-passenger-details *ngSwitchCase="'PassengerCar'" [passengerCar]="vehicle"></app-passenger-details>
+                    <app-motorcycle-details *ngSwitchCase="'Motorcycle'" [motorcycle]="vehicle">
+                    </app-motorcycle-details>
+                    <app-passenger-details *ngSwitchCase="'PassengerCar'" [passengerCar]="vehicle">
+                    </app-passenger-details>
                     <app-truck-details *ngSwitchCase="'Truck'" [truck]="vehicle"></app-truck-details>
                 </div>
             </ul>
