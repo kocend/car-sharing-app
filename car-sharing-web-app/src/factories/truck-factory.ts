@@ -25,6 +25,7 @@ export class TruckFactory extends VehicleFactory {
         truck.hasBedroom = Math.random() >=0.5
         truck.hasAirConditioning = Math.random() >= 0.5;
         truck.hasCBRadio = Math.random() >= 0.5;
+        truck.maxLoad = Math.floor(20 + Math.random()*30);
         truck.power = Math.floor(300 + Math.random()*1200);
         truck.seats = Math.floor(1+ Math.random()*3);
         truck.type = VehicleType.Truck;
