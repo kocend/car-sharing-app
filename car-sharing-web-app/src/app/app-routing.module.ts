@@ -5,6 +5,8 @@ import { ClientsListComponent } from './car-sharing-base/clients-list/clients-li
 import { LoanListComponent } from './car-sharing-base/loan-list/loan-list.component';
 import { LoanFormComponent } from './car-sharing-base/loan-form/loan-form.component';
 import { CarsOverviewComponent } from './car-sharing-base/cars-overview/cars-overview.component';
+import { TrailerListComponent } from './car-sharing-base/trailer-list/trailer-list.component';
+import { PriceListComponent } from './car-sharing-base/price-list/price-list.component';
 
 
 const routes: Routes = [];
@@ -13,9 +15,11 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot([
     { path: 'loan-desktop', component: LoanDesktopComponent },
     { path: 'cars-overview', component: CarsOverviewComponent },
+    { path: 'trailer-list', component: TrailerListComponent },
     { path: 'clients-list', component: ClientsListComponent },
     { path: 'loan-list', component: LoanListComponent },
-    { path: 'loan-form', component: LoanFormComponent },
+    { path: 'price-list', component: PriceListComponent },
+    { path: 'loan-form', component: LoanFormComponent }
 ])],
   exports: [RouterModule]
 })

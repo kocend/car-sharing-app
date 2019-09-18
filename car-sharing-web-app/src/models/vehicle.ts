@@ -1,12 +1,13 @@
 import { VehicleType } from './vehicle-type.enum';
 import { Colors } from './colors.enum';
 import { ILendable } from './ilendable';
+import { LendStatus } from './lend-status.enum';
 
 export abstract class Vehicle implements ILendable {
    public getName(): string {
       return "Vehicle";
    }
-   lendStatus: import("./lend-status.enum").LendStatus;
+   lendStatus: LendStatus;
    lendCost: number;
    
    public type: VehicleType;

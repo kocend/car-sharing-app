@@ -1,12 +1,13 @@
 import { HookType } from './hook-type.enum';
 import { ILendable } from './ilendable';
+import { LendStatus } from './lend-status.enum';
 
 
 export class Trailer implements ILendable {
     public getName(): string {
         return "Trailer";
     }
-    lendStatus: import("./lend-status.enum").LendStatus;
+    lendStatus: LendStatus;
     lendCost: number;
     
     public maxOverload: number;

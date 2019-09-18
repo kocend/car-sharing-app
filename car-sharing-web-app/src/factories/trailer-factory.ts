@@ -1,7 +1,8 @@
 import { Trailer } from 'src/models/trailer';
 import { HookType } from 'src/models/hook-type.enum';
+import { Injectable } from '@angular/core';
 
-
+@Injectable()
 export class TrailerFactory{
     public create(): Trailer{
         let trailer = new Trailer();

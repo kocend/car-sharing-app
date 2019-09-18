@@ -1,6 +1,6 @@
 export enum HookType {
-   None,
-   Light,
-   Truck,
-   HeavyTruck
+   None = "Universal",
+   Light = "Light",
+   Truck = "Truck",
+   HeavyTruck = "Heavy Truck"
 }

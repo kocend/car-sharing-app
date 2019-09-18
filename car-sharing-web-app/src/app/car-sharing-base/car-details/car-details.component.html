@@ -5,7 +5,8 @@
         </tr>
     </thead>
     <tbody>
-        <div *ngIf="vehicle != null" class="rounded" [ngClass]="{'brown': vehicle.type=='Bus',
+        <div *ngIf="vehicle != null" class="rounded"
+                                     [ngClass]="{'brown': vehicle.type=='Bus',
                                                  'blue': vehicle.type=='PassengerCar',
                                                  'yellow': vehicle.type=='Motorcycle',
                                                  'green': vehicle.type=='Truck'}">

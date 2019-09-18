@@ -10,7 +10,6 @@ import { Vehicle } from 'src/models/vehicle';
 export class CarsListComponent implements OnInit {
 
   private vehicleList: Vehicle[];
-  private selectedRow: Number;
   @Output() clickedVehicle = new EventEmitter<Vehicle>();
 
 
@@ -19,7 +18,6 @@ export class CarsListComponent implements OnInit {
    }
 
    private onClickedRow(index){
-      this.selectedRow = index;
       this.clickedVehicle.emit(this.vehicleList[index]);
       console.log(index + "clicked");
    }
@@ -27,5 +25,4 @@ export class CarsListComponent implements OnInit {
   ngOnInit() {
     this.vehicleList.sort();
   }
-
 }

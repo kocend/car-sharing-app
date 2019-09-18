@@ -1,15 +1,18 @@
-import { Repository } from 'src/repositories/repository';
 import { VehicleRepository } from 'src/repositories/vehicle-repository';
 import { BusFactory } from './bus-factory';
 import { MotorcycleFactory } from './motorcycle-factory';
 import { PassengerCarFactory } from './passenger-car-factory';
 import { TruckFactory } from './truck-factory';
 import { Injectable } from '@angular/core';
+import { TrailerRepository } from 'src/repositories/trailer-repository';
+import { TrailerFactory } from './trailer-factory';
 
 @Injectable()
 export class SeedData {
 
     constructor(private readonly repository: VehicleRepository,
+                private readonly trailerRepository: TrailerRepository,
+                private readonly trailerFactory: TrailerFactory,
                 private readonly busFactory: BusFactory,
                 private readonly motorcycleFactory: MotorcycleFactory,
                 private readonly passengerCarFactory: PassengerCarFactory,
@@ -40,12 +43,12 @@ export class SeedData {
                 //console.log("case 3");
                 break;
             }
+            this.repository.items[i].lendCost = Math.floor(100 + Math.random()*2000);
         }
 
-        console.log("amount od elements in repo: " + this.repository.getAll().length);
-
-        //console.log("end of seed function");
+        for(let i = 0; i < amount; i++){
+            this.trailerRepository.add(this.trailerFactory.create());
+            this.trailerRepository.items[i].lendCost = Math.floor(50 + Math.random()*1000);
+        }
     }
-
-
 }
