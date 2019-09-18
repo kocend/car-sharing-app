@@ -10,12 +10,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let vehicle of vehicleList; index as i" (mouseover)="onClickedRow(i)">
+            <tr *ngFor="let vehicle of vehicleList; index as i">
                 <td>{{i+1}}</td>
                 <td>{{vehicle.type}}</td>
                 <td>{{vehicle.registration_number}}</td>
                 <td>{{vehicle.color}}</td>
-                <td style="color: greenyellow">{{vehicle.lendCost}}</td>
+                <td style="color: rgb(42, 179, 0)">{{vehicle.lendCost}}</td>
             </tr>
         </tbody>
         <tfoot>

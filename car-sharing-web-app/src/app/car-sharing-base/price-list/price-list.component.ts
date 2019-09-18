@@ -16,7 +16,11 @@ export class PriceListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.vehicleList.sort();
+    this.vehicleList.sort((a,b)=>{
+       if(a.lendCost > b.lendCost) return 1;
+       if(a.lendCost < b.lendCost) return -1;
+       return 0;
+      });
   }
 
 }
