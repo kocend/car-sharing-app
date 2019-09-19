@@ -10,7 +10,8 @@ export class CarDetailsComponent implements OnInit {
 
   @Input() vehicle: Vehicle;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }

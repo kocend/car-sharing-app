@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Vehicle } from 'src/models/vehicle';
+import { VehicleRepository } from 'src/repositories/vehicle-repository';
 
 @Component({
   selector: 'app-car-form',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarFormComponent implements OnInit {
 
-  constructor() { }
+  @Input() selectedVehicle: Vehicle;
+
+  constructor(private vehicleRepo: VehicleRepository) { }
+
 
   ngOnInit() {
   }

@@ -1,10 +1,20 @@
-
-
 <div class="row">
     <div class="col">
         <app-cars-list (clickedVehicle)="onVehicleSelected($event)"></app-cars-list>
     </div>
     <div class="col">
-        <app-car-details [vehicle]="selectedVehicle"></app-car-details>
+        <div *ngIf="!editButtonClicked">
+            <div *ngIf="selectedVehicle != null">
+                <app-car-details [vehicle]="selectedVehicle"></app-car-details>
+            </div>
+        </div>
+        <div *ngIf="editButtonClicked">
+            <app-car-form [selectedVehicle]="selectedVehicle"></app-car-form>
+        </div>
     </div>
+</div>
+<div class="row" style="margin-top: 2mm;">
+    <button class="btn btn-success" style="margin-left: 60%;">add new vehicle</button>
+    <button class="btn btn-warning" style="margin-left: 10mm;" (click)="editSelectedVehicle()">edit</button>
+    <button class="btn btn-danger" style="margin-left: 10mm;" (click)="deleteSelectedVehicle()">delete</button>
 </div>

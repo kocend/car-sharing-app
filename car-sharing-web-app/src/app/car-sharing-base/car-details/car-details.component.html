@@ -1,33 +1,36 @@
-<table class="table table-bordered">
-    <thead class="table table-dark">
-        <tr>
-            <th>vehicle details</th>
-        </tr>
-    </thead>
-    <tbody>
-        <div *ngIf="vehicle != null" class="rounded"
-                                     [ngClass]="{'brown': vehicle.type=='Bus',
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered">
+        <thead class="table table-dark">
+            <tr>
+                <th>vehicle details</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="vehicle != null">
+            <th style="max-width: 30mm;">
+                <div class="rounded" [ngClass]="{'brown': vehicle.type=='Bus',
                                                  'blue': vehicle.type=='PassengerCar',
                                                  'yellow': vehicle.type=='Motorcycle',
                                                  'green': vehicle.type=='Truck'}">
-            <ul>
-                <li>type: <b>{{vehicle.type}}</b></li>
-                <li>registration number: <b>{{vehicle.registration_number}}</b></li>
-                <li>color: <b>{{vehicle.color}}</b></li>
-                <li>car mileage: <b>{{vehicle.car_mileage_in_kilometers}}</b> kilometers</li>
-                <li>number of seats: <b>{{vehicle.seats}}</b></li>
-                <li>power: <b>{{vehicle.power}}</b> horse power</li>
-                <li>weight: <b>{{vehicle.weight}}</b> kilograms</li>
-                <li>has air conditioning: <b>{{vehicle.hasAirConditioning}}</b></li>
-                <div [ngSwitch]="vehicle.type">
-                    <app-bus-details *ngSwitchCase="'Bus'" [bus]="vehicle"></app-bus-details>
-                    <app-motorcycle-details *ngSwitchCase="'Motorcycle'" [motorcycle]="vehicle">
-                    </app-motorcycle-details>
-                    <app-passenger-details *ngSwitchCase="'PassengerCar'" [passengerCar]="vehicle">
-                    </app-passenger-details>
-                    <app-truck-details *ngSwitchCase="'Truck'" [truck]="vehicle"></app-truck-details>
+                    <ul>
+                        <li>type: <b>{{vehicle.type}}</b></li>
+                        <li>registration number: <b>{{vehicle.registration_number}}</b></li>
+                        <li>color: <b>{{vehicle.color}}</b></li>
+                        <li>car mileage: <b>{{vehicle.car_mileage_in_kilometers}}</b> kilometers</li>
+                        <li>number of seats: <b>{{vehicle.seats}}</b></li>
+                        <li>power: <b>{{vehicle.power}}</b> horse power</li>
+                        <li>weight: <b>{{vehicle.weight}}</b> kilograms</li>
+                        <li>has air conditioning: <b>{{vehicle.hasAirConditioning}}</b></li>
+                        <div [ngSwitch]="vehicle.type">
+                            <app-bus-details *ngSwitchCase="'Bus'" [bus]="vehicle"></app-bus-details>
+                            <app-motorcycle-details *ngSwitchCase="'Motorcycle'" [motorcycle]="vehicle">
+                            </app-motorcycle-details>
+                            <app-passenger-details *ngSwitchCase="'PassengerCar'" [passengerCar]="vehicle">
+                            </app-passenger-details>
+                            <app-truck-details *ngSwitchCase="'Truck'" [truck]="vehicle"></app-truck-details>
+                        </div>
+                    </ul>
                 </div>
-            </ul>
-        </div>
-    </tbody>
-</table>
+            </th>
+        </tbody>
+    </table>
+</div>

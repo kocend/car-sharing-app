@@ -10,8 +10,14 @@ export abstract class Repository<T> {
         this.items.push(item);
     }
 
+    public update(oldItem: T, newItem: T): void{
+        let index = this.items.indexOf(oldItem);
+        this.items.fill(newItem,index,index+1);
+    }
+
     public delete(item: T): void{
-        //TODO body of this function
+        let index = this.items.indexOf(item);
+        this.items.splice(index,1);
     }
 
     public deleteLastAddedElement():void{
