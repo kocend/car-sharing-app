@@ -1,1 +1,51 @@
-<p>car-form works!</p>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered">
+        <thead class="table table-dark">
+            <tr>
+                <th>vehicle details</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="vehicleCopy != null">
+            <th style="max-width: 30mm;">
+                <div class="rounded" [ngClass]="{'Bus': vehicleCopy.type=='Bus',
+                                                 'PassengerCar': vehicleCopy.type=='PassengerCar',
+                                                 'Motorcycle': vehicleCopy.type=='Motorcycle',
+                                                 'Truck': vehicleCopy.type=='Truck'}">
+                    <ul>
+                        <li>
+                            type: <input class="rounded" [ngClass]="type" [(ngModel)]="vehicleCopy.type" requeired>
+                        </li>
+                        <li>
+                            registration number: <input class="rounded" [ngClass]="registration_number" [(ngModel)]="vehicleCopy.registration_number" requeired>
+                        </li>
+                        <li>
+                            color: <input class="rounded" [ngClass]="color" [(ngModel)]="vehicleCopy.color">
+                        </li>
+                        <li>
+                            car mileage: <input class="rounded" [ngClass]="car_mileage_in_kilometers" type="number" [(ngModel)]="vehicleCopy.car_mileage_in_kilometers"
+                                min="50" max="10000000" requeired> kilometers
+                        </li>
+                        <li>
+                            number of seats: <input class="rounded" [ngClass]="seats" type="number" [(ngModel)]="vehicleCopy.seats" min="1" max="100"
+                                requeired>
+                        </li>
+                        <li>
+                            power: <input class="rounded" [ngClass]="power" type="number" [(ngModel)]="vehicleCopy.power" min="1" max="10000"
+                                requeired> horse power
+                        </li>
+                        <li>
+                            weight: <input class="rounded" [ngClass]="weight" type="number" [(ngModel)]="vehicleCopy.weight" min="1" max="100000"
+                                requeired> kilograms
+                        </li>
+                        <li>
+                            has air conditioning: <input class="rounded" [ngClass]="hasAirConditioning" type="boolean" [(ngModel)]="vehicleCopy.hasAirConditioning"
+                                requeired>
+                        </li>
+                    </ul>
+                    <button class="btn btn-success" (click)="submitChanges()">submit</button>
+
+                </div>
+            </th>
+        </tbody>
+    </table>
+</div>

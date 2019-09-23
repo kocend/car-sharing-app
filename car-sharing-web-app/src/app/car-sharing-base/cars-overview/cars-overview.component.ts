@@ -21,7 +21,7 @@ export class CarsOverviewComponent implements OnInit {
 
   onVehicleSelected(vehicle: Vehicle) {
     this.selectedVehicle = vehicle;
-    console.log("object complete: " + this.selectedVehicle.car_mileage_in_kilometers);
+    this.editButtonClicked=false;
   }
 
   deleteSelectedVehicle() {
@@ -34,6 +34,10 @@ export class CarsOverviewComponent implements OnInit {
 
   editSelectedVehicle(){
     this.editButtonClicked=true;
+  }
+
+  changesSubmitted(value: boolean){
+    this.editButtonClicked=false;
   }
 
 }

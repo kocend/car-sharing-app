@@ -20,7 +20,7 @@ import { TrailerFactory } from 'src/factories/trailer-factory';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@
             </div>
         </div>
         <div *ngIf="editButtonClicked">
-            <app-car-form [selectedVehicle]="selectedVehicle"></app-car-form>
+            <app-car-form [selectedVehicle]="selectedVehicle" (changesSubmitted)="changesSubmitted($event)"></app-car-form>
         </div>
     </div>
 </div>

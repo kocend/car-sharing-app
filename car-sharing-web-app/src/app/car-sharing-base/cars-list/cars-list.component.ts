@@ -19,7 +19,6 @@ export class CarsListComponent implements OnInit {
 
    private onClickedRow(index){
       this.clickedVehicle.emit(this.vehicleList[index]);
-      console.log(index + "clicked");
    }
 
   ngOnInit() {

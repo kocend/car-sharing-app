@@ -22,7 +22,11 @@ import { MotorcycleDetailsComponent } from './motorcycle-details/motorcycle-deta
 import { TruckDetailsComponent } from './truck-details/truck-details.component';
 import { FormsModule } from '@angular/forms';
 import { TrailerListComponent } from './trailer-list/trailer-list.component';
-import { PriceListComponent } from './price-list/price-list.component'
+import { PriceListComponent } from './price-list/price-list.component';
+import { BusFormComponent } from './bus-form/bus-form.component';
+import { PassengerFormComponent } from './passenger-form/passenger-form.component';
+import { MotorcycleFormComponent } from './motorcycle-form/motorcycle-form.component';
+import { TruckFormComponent } from './truck-form/truck-form.component'
 
 
 
@@ -48,6 +52,10 @@ import { PriceListComponent } from './price-list/price-list.component'
     TruckDetailsComponent,
     TrailerListComponent,
     PriceListComponent,
+    BusFormComponent,
+    PassengerFormComponent,
+    MotorcycleFormComponent,
+    TruckFormComponent,
   ],
   imports: [
     CommonModule,
