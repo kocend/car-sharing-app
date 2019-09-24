@@ -27,7 +27,6 @@ export class CarFormComponent implements OnInit, OnChanges {
   hasAirConditioning: String;
   weight: String;
 
-
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     this.vehicleCopy = Object.assign({}, this.selectedVehicle);
     this.type = "";
@@ -43,7 +42,7 @@ export class CarFormComponent implements OnInit, OnChanges {
   constructor() { }
   ngOnInit() { }
 
-  submitChanges() {
+  submitChanges(answerFromChild: boolean) {
     if (this.checkType() &&
       this.checkColor() &&
       this.checkRegistrationNumber() &&
@@ -51,7 +50,8 @@ export class CarFormComponent implements OnInit, OnChanges {
       this.checkNumberOfSeats() &&
       this.checkPower() &&
       this.checkWeight() &&
-      this.checkAirConditioning()) {
+      this.checkAirConditioning() &&
+      answerFromChild) {
 
       this.selectedVehicle.type = this.vehicleCopy.type;
       this.selectedVehicle.car_mileage_in_kilometers = this.vehicleCopy.car_mileage_in_kilometers;
@@ -61,6 +61,7 @@ export class CarFormComponent implements OnInit, OnChanges {
       this.selectedVehicle.hasAirConditioning = this.vehicleCopy.hasAirConditioning;
       this.selectedVehicle.seats = this.vehicleCopy.seats;
       this.selectedVehicle.weight = this.vehicleCopy.weight;
+
       this.changesSubmitted.emit();
     }
     else {

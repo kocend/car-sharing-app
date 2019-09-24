@@ -1,8 +1,9 @@
 <li>
-    has toilet: <input class="rounded" [ngClass]="hasToilet" type="boolean" [(ngModel)]="selectedBus.hastoilet"
+    has toilet: <input class="rounded" [ngClass]="hasToilet" type="boolean" [(ngModel)]="draftCopyOfBus.hasToilet"
         requeired>
 </li>
 <li>
-    doors count: <input class="rounded" [ngClass]="doorsCount" type="boolean" [(ngModel)]="selectedBus.doorsCount"
+    doors count: <input type="number" class="rounded" [ngClass]="doorsCount" type="boolean" [(ngModel)]="draftCopyOfBus.doorsCount"
         required>
 </li>
+<button class="btn btn-success" (click)="submitChanges()">submit changes</button>

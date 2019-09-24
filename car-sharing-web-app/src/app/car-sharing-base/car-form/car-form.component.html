@@ -41,9 +41,17 @@
                             has air conditioning: <input class="rounded" [ngClass]="hasAirConditioning" type="boolean" [(ngModel)]="vehicleCopy.hasAirConditioning"
                                 requeired>
                         </li>
+                        <div [ngSwitch]="vehicleCopy.type">
+                            <app-bus-form *ngSwitchCase="'Bus'" [selectedBus]="selectedVehicle" (changesSubmitted)="submitChanges($event)"></app-bus-form>
+                        <!--
+                            <app-motorcycle-details *ngSwitchCase="'Motorcycle'" [motorcycle]="vehicle">
+                            </app-motorcycle-details>
+                            <app-passenger-details *ngSwitchCase="'PassengerCar'" [passengerCar]="vehicle">
+                            </app-passenger-details>
+                            <app-truck-details *ngSwitchCase="'Truck'" [truck]="vehicle"></app-truck-details>
+                        -->
+                        </div>
                     </ul>
-                    <button class="btn btn-success" (click)="submitChanges()">submit</button>
-
                 </div>
             </th>
         </tbody>
