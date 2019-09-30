@@ -26,7 +26,7 @@ import { TrailerFactory } from 'src/factories/trailer-factory';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    CarSharingBaseModule,
+    CarSharingBaseModule
   ],
   providers: [
     { provide: VehicleRepository, useClass: VehicleRepository },

@@ -1,1 +1,12 @@
-<p>motorcycle-form works!</p>
+<li>
+    has trunk: <input class="rounded" [ngClass]="hasTrunk_input_CSS_class" [(ngModel)]="draftCopyOfMotorcycle.hasTrunk" requeired>
+</li>
+<li>
+    has movable splasher: <input class="rounded" [ngClass]="hasMovableSplasher_input_CSS_class"
+        [(ngModel)]="draftCopyOfMotorcycle.hasMovableSplasher" required>
+</li>
+<li>
+    has gearbox: <input class="rounded" [ngClass]="hasGearBox_input_CSS_class"
+        [(ngModel)]="draftCopyOfMotorcycle.hasGearBox" required>
+</li>
+<button class="btn btn-success" (click)="submitChanges()">confirm changes</button>

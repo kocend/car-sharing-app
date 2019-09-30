@@ -13,11 +13,11 @@ export class BusFormComponent implements OnInit, OnChanges {
 
   draftCopyOfBus: Bus;
 
-  success = "border border-success";
-  error = "border border-danger";
+  success_class = "border border-success";
+  error_class = "border border-danger";
 
-  hasToilet: String;
-  doorsCount: String;
+  hasToilet_input_CSS_class: String;
+  doorsCount_input_CSS_class: String;
 
   constructor() { 
   }
@@ -27,8 +27,8 @@ export class BusFormComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     this.draftCopyOfBus = Object.assign({}, this.selectedBus);
-    this.hasToilet="";
-    this.doorsCount="";
+    this.hasToilet_input_CSS_class="";
+    this.doorsCount_input_CSS_class="";
   }
 
   submitChanges(){
@@ -46,24 +46,23 @@ export class BusFormComponent implements OnInit, OnChanges {
     let choice: String = String(this.draftCopyOfBus.hasToilet);
     if (choice == "true" ||
       choice == "false") {
-      this.hasToilet = this.success;
+      this.hasToilet_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.hasToilet = this.error;
+      this.hasToilet_input_CSS_class = this.error_class;
       return false;
     }
   }
 
   checkDoorsCount(){
     if(this.draftCopyOfBus.doorsCount>0 && this.draftCopyOfBus.doorsCount<11){
-      this.doorsCount=this.success;
+      this.doorsCount_input_CSS_class=this.success_class;
       return true;
     }
     else{
-      this.doorsCount=this.error;
+      this.doorsCount_input_CSS_class=this.error_class;
       return false;
     }
   }
-
 }

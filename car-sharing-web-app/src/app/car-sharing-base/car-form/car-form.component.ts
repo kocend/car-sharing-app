@@ -15,28 +15,28 @@ export class CarFormComponent implements OnInit, OnChanges {
 
   vehicleCopy: Vehicle;
 
-  success = "border border-success";
-  error = "border border-danger";
+  success_class = "border border-success";
+  error_class = "border border-danger";
 
-  type: String;
-  car_mileage_in_kilometers: String;
-  color: String;
-  registration_number: String;
-  power: String;
-  seats: String;
-  hasAirConditioning: String;
-  weight: String;
+  type_input_CSS_class: String;
+  car_mileage_in_kilometers_input_CSS_class: String;
+  color_input_CSS_class: String;
+  registration_number_input_CSS_class: String;
+  power_input_CSS_class: String;
+  seats_input_CSS_class: String;
+  hasAirConditioning_input_CSS_class: String;
+  weight_input_CSS_class: String;
 
   ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
     this.vehicleCopy = Object.assign({}, this.selectedVehicle);
-    this.type = "";
-    this.car_mileage_in_kilometers = "";
-    this.color = "";
-    this.registration_number = "";
-    this.power = "";
-    this.seats = "";
-    this.hasAirConditioning = "";
-    this.weight = "";
+    this.type_input_CSS_class = "";
+    this.car_mileage_in_kilometers_input_CSS_class = "";
+    this.color_input_CSS_class = "";
+    this.registration_number_input_CSS_class = "";
+    this.power_input_CSS_class = "";
+    this.seats_input_CSS_class = "";
+    this.hasAirConditioning_input_CSS_class = "";
+    this.weight_input_CSS_class = "";
   }
 
   constructor() { }
@@ -78,52 +78,58 @@ export class CarFormComponent implements OnInit, OnChanges {
 
   checkType(): boolean {
     if (Object.values(VehicleType).includes(this.vehicleCopy.type)) {
-      this.type = this.success;
+      this.type_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.type = this.error;
+      this.type_input_CSS_class = this.error_class;
       return false;
     }
   }
 
   checkColor(): boolean {
     if (Object.values(Colors).includes(this.vehicleCopy.color)) {
-      this.color = this.success;
+      this.color_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.color = this.error;
+      this.color_input_CSS_class = this.error_class;
       return false;
     }
   }
 
   checkRegistrationNumber(): boolean {
     //TODO validation
-    this.registration_number = this.success;
-    return true;
+    if (this.vehicleCopy.registration_number == null || this.vehicleCopy.registration_number.trim() == "") {
+      this.registration_number_input_CSS_class = this.error_class;
+      return false;
+    }
+    else {
+      this.registration_number_input_CSS_class = this.success_class;
+      return true;
+    }
   }
 
   checkCarMileage(): boolean {
     if (this.vehicleCopy.car_mileage_in_kilometers >= 0
       &&
       this.vehicleCopy.car_mileage_in_kilometers < 100000) {
-      this.car_mileage_in_kilometers = this.success;
+      this.car_mileage_in_kilometers_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.car_mileage_in_kilometers = this.error;
+      this.car_mileage_in_kilometers_input_CSS_class = this.error_class;
       return false;
     }
   }
 
   checkNumberOfSeats(): boolean {
     if (this.vehicleCopy.seats >= 1 && this.vehicleCopy.seats < 100) {
-      this.seats = this.success;
+      this.seats_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.seats = this.error;
+      this.seats_input_CSS_class = this.error_class;
       return false;
     }
   }
@@ -132,11 +138,11 @@ export class CarFormComponent implements OnInit, OnChanges {
     if (this.vehicleCopy.power >= 1
       &&
       this.vehicleCopy.power < 10000) {
-      this.power = this.success;
+      this.power_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.power = this.error;
+      this.power_input_CSS_class = this.error_class;
       return false;
     }
   }
@@ -145,11 +151,11 @@ export class CarFormComponent implements OnInit, OnChanges {
     if (this.vehicleCopy.weight >= 50
       &&
       this.vehicleCopy.weight < 100000) {
-      this.weight = this.success;
+      this.weight_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.weight = this.error;
+      this.weight_input_CSS_class = this.error_class;
       return false;
     }
   }
@@ -158,11 +164,11 @@ export class CarFormComponent implements OnInit, OnChanges {
     let choice: String = String(this.vehicleCopy.hasAirConditioning);
     if (choice == "true" ||
       choice == "false") {
-      this.hasAirConditioning = this.success;
+      this.hasAirConditioning_input_CSS_class = this.success_class;
       return true;
     }
     else {
-      this.hasAirConditioning = this.error;
+      this.hasAirConditioning_input_CSS_class = this.error_class;
       return false;
     }
   }

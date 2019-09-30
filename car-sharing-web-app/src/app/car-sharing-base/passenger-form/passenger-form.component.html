@@ -1,1 +1,13 @@
-<p>passenger-form works!</p>
+<li>
+    has GPS: <input class="rounded" [ngClass]="hasGPS_input_CSS_class" type="boolean" [(ngModel)]="draftCopyOfPassengerCar.hasGPS"
+        requeired>
+</li>
+<li>
+    has roof rack: <input class="rounded" [ngClass]="hasRoofRack_input_CSS_class" type="boolean" [(ngModel)]="draftCopyOfPassengerCar.hasRoofRack"
+        requeired>
+</li>
+<li>
+    has multimedia system: <input class="rounded" [ngClass]="hasMultimediaSystem_input_CSS_class" type="boolean" [(ngModel)]="draftCopyOfPassengerCar.hasMultimediaSystem"
+        requeired>
+</li>
+<button class="btn btn-success" (click)="submitChanges()">confirm changes</button>

@@ -13,43 +13,47 @@
                                                  'Truck': vehicleCopy.type=='Truck'}">
                     <ul>
                         <li>
-                            type: <input class="rounded" [ngClass]="type" [(ngModel)]="vehicleCopy.type" requeired>
+                            type: <input class="rounded" [ngClass]="type_input_CSS_class" [(ngModel)]="vehicleCopy.type" requeired readonly>
                         </li>
                         <li>
-                            registration number: <input class="rounded" [ngClass]="registration_number" [(ngModel)]="vehicleCopy.registration_number" requeired>
+                            registration number: <input class="rounded" [ngClass]="registration_number_input_CSS_class" [(ngModel)]="vehicleCopy.registration_number" requeired>
                         </li>
                         <li>
-                            color: <input class="rounded" [ngClass]="color" [(ngModel)]="vehicleCopy.color">
+                            color: <input class="rounded" [ngClass]="color_input_CSS_class" [(ngModel)]="vehicleCopy.color">
                         </li>
                         <li>
-                            car mileage: <input class="rounded" [ngClass]="car_mileage_in_kilometers" type="number" [(ngModel)]="vehicleCopy.car_mileage_in_kilometers"
+                            car mileage: <input class="rounded" [ngClass]="car_mileage_in_kilometers_input_CSS_class" type="number" [(ngModel)]="vehicleCopy.car_mileage_in_kilometers"
                                 min="50" max="10000000" requeired> kilometers
                         </li>
                         <li>
-                            number of seats: <input class="rounded" [ngClass]="seats" type="number" [(ngModel)]="vehicleCopy.seats" min="1" max="100"
+                            number of seats: <input class="rounded" [ngClass]="seats_input_CSS_class" type="number" [(ngModel)]="vehicleCopy.seats" min="1" max="100"
                                 requeired>
                         </li>
                         <li>
-                            power: <input class="rounded" [ngClass]="power" type="number" [(ngModel)]="vehicleCopy.power" min="1" max="10000"
+                            power: <input class="rounded" [ngClass]="power_input_CSS_class" type="number" [(ngModel)]="vehicleCopy.power" min="1" max="10000"
                                 requeired> horse power
                         </li>
                         <li>
-                            weight: <input class="rounded" [ngClass]="weight" type="number" [(ngModel)]="vehicleCopy.weight" min="1" max="100000"
+                            weight: <input class="rounded" [ngClass]="weight_input_CSS_class" type="number" [(ngModel)]="vehicleCopy.weight" min="1" max="100000"
                                 requeired> kilograms
                         </li>
                         <li>
-                            has air conditioning: <input class="rounded" [ngClass]="hasAirConditioning" type="boolean" [(ngModel)]="vehicleCopy.hasAirConditioning"
+                            has air conditioning: <input class="rounded" [ngClass]="hasAirConditioning_input_CSS_class" type="boolean" [(ngModel)]="vehicleCopy.hasAirConditioning"
                                 requeired>
                         </li>
                         <div [ngSwitch]="vehicleCopy.type">
-                            <app-bus-form *ngSwitchCase="'Bus'" [selectedBus]="selectedVehicle" (changesSubmitted)="submitChanges($event)"></app-bus-form>
-                        <!--
-                            <app-motorcycle-details *ngSwitchCase="'Motorcycle'" [motorcycle]="vehicle">
-                            </app-motorcycle-details>
-                            <app-passenger-details *ngSwitchCase="'PassengerCar'" [passengerCar]="vehicle">
-                            </app-passenger-details>
-                            <app-truck-details *ngSwitchCase="'Truck'" [truck]="vehicle"></app-truck-details>
-                        -->
+
+                            <app-bus-form *ngSwitchCase="'Bus'" [selectedBus]="selectedVehicle" 
+                            (changesSubmitted)="submitChanges($event)"></app-bus-form>
+
+                            <app-motorcycle-form *ngSwitchCase="'Motorcycle'" [selectedMotorcycle]="selectedVehicle"
+                            (changesSubmitted)="submitChanges($event)"></app-motorcycle-form>
+                           
+                            <app-passenger-form *ngSwitchCase="'PassengerCar'" [selectedPassengerCar]="selectedVehicle"
+                            (changesSubmitted)="submitChanges($event)"></app-passenger-form>
+                            
+                            <app-truck-form *ngSwitchCase="'Truck'" [selectedTruck]="selectedVehicle"
+                            (changesSubmitted)="submitChanges($event)"></app-truck-form>
                         </div>
                     </ul>
                 </div>

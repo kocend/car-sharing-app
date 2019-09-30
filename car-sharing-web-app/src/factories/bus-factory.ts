@@ -23,7 +23,7 @@ export class BusFactory extends VehicleFactory {
         let bus = new Bus();
         bus.weight = Math.floor(this.getMinWeight()+Math.random()*(this.getMaxWeight()-this.getMinWeight()));
         bus.car_mileage_in_kilometers = Math.floor(Math.random()*100000);
-        bus.doorsCount = Math.floor(Math.random()*10);
+        bus.doorsCount = Math.floor(1+ Math.random()*9);
         bus.hasAirConditioning = Math.random() >= 0.5;
         bus.hasToilet = Math.random() >= 0.5;
         bus.power = Math.floor(100 + Math.random()*500);

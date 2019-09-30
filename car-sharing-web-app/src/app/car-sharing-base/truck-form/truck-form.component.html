@@ -1,1 +1,13 @@
-<p>truck-form works!</p>
+<li>
+    max load: <input class="rounded" [ngClass]="maxLoad_input_CSS_class" type="number" [(ngModel)]="draftCopyOfTruck.maxLoad" min=20 max=50
+        requeired>
+</li>
+<li>
+    has bedroom: <input class="rounded" [ngClass]="hasBedroom_input_CSS_class" type="boolean" [(ngModel)]="draftCopyOfTruck.hasBedroom"
+        requeired>
+</li>
+<li>
+    has CB radio: <input class="rounded" [ngClass]="hasCBRadio_input_CSS_class" type="boolean" [(ngModel)]="draftCopyOfTruck.hasCBRadio"
+        requeired>
+</li>
+<button class="btn btn-success" (click)="submitChanges()">confirm changes</button>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { VehicleRepository } from 'src/repositories/vehicle-repository';
 import { Vehicle } from 'src/models/vehicle';
 
@@ -7,7 +7,7 @@ import { Vehicle } from 'src/models/vehicle';
   templateUrl: './cars-list.component.html',
   styleUrls: ['./cars-list.component.scss']
 })
-export class CarsListComponent implements OnInit {
+export class CarsListComponent implements OnInit{
 
   private vehicleList: Vehicle[];
   @Output() clickedVehicle = new EventEmitter<Vehicle>();

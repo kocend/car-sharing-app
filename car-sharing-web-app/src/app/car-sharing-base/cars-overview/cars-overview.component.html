@@ -1,6 +1,9 @@
 <div class="row">
     <div class="col">
-        <app-cars-list (clickedVehicle)="onVehicleSelected($event)"></app-cars-list>
+        <app-cars-list class="carsList" (clickedVehicle)="onVehicleSelected($event)"></app-cars-list>
+        <div class="freezedArea rounded" *ngIf="editButtonClicked || newButtonClicked">
+            Confirm changes first.
+        </div>
     </div>
     <div class="col">
         <div *ngIf="!newButtonClicked">
@@ -15,17 +18,16 @@
             </div>
         </div>
         <div *ngIf="newButtonClicked">
-            <!--choosing type of new vehicle-->
-            <input type="radio" name="vehicleType" [value]="busChosen">Bus<br>
-            <input type="radio" name="vehicleType">Motorcycle<br>
-            <input type="radio" name="vehicleType">Passenger Car<br>
-            <input type="radio" name="vehicleType">Truck<br>
-            <button class="btn btn-success"(click)="typeOfVehicleChosen()">submit</button>
+            <div *ngFor="let type of types">
+                <input type="radio" name="typeOfVehicle" value="{{type}}" [(ngModel)]="typeOfNewVehicle"
+                    checked>{{type}}
+            </div>
+            <button class="btn btn-success" (click)="typeOfVehicleChosen()">submit</button>
         </div>
     </div>
 </div>
-<div class="row" style="margin-top: 2mm;">
-    <button class="btn btn-success" style="margin-left: 60%;" (click)="addNewVehicle()">add new vehicle</button>
-    <button class="btn btn-warning" style="margin-left: 10mm;" (click)="editSelectedVehicle()">edit</button>
-    <button class="btn btn-danger" style="margin-left: 10mm;" (click)="deleteSelectedVehicle()">delete</button>
+<div class="row" style="margin-top: 2mm; min-height: 12mm;">
+        <button *ngIf="!editButtonClicked && !newButtonClicked" class="btn btn-success" style="margin-left: 60%;" (click)="addNewVehicle()">add new vehicle</button>
+        <button *ngIf="!editButtonClicked && !newButtonClicked" class="btn btn-warning" style="margin-left: 10mm;" (click)="editSelectedVehicle()">edit</button>
+        <button *ngIf="!editButtonClicked && !newButtonClicked" class="btn btn-danger" style="margin-left: 10mm;" (click)="deleteSelectedVehicle()">delete</button>
 </div>
