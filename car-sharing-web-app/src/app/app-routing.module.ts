@@ -13,8 +13,8 @@ const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot([
-    { path: 'loan-desktop', component: LoanDesktopComponent },
     { path: 'cars-overview', component: CarsOverviewComponent },
+    { path: 'loan-desktop', component: LoanDesktopComponent },
     { path: 'trailer-list', component: TrailerListComponent },
     { path: 'clients-list', component: ClientsListComponent },
     { path: 'loan-list', component: LoanListComponent },

@@ -19,11 +19,11 @@
                             registration number: <input class="rounded" [ngClass]="registration_number_input_CSS_class" [(ngModel)]="vehicleCopy.registration_number" requeired>
                         </li>
                         <li>
-                            color: <input class="rounded" [ngClass]="color_input_CSS_class" [(ngModel)]="vehicleCopy.color">
+                            color: <input class="rounded" [ngClass]="color_input_CSS_class" [(ngModel)]="vehicleCopy.color" title="type one of these: PURPLE, NAVY_BLUE, BLUE, GREEN, YELLOW, ORANGE, RED">
                         </li>
                         <li>
-                            car mileage: <input class="rounded" [ngClass]="car_mileage_in_kilometers_input_CSS_class" type="number" [(ngModel)]="vehicleCopy.car_mileage_in_kilometers"
-                                min="50" max="10000000" requeired> kilometers
+                            car mileage: <input class="rounded" [ngClass]="car_mileage_in_kilometers_input_CSS_class" type="text" [(ngModel)]="vehicleCopy.car_mileage_in_kilometers"
+                                 pattern="[0-9]"  requeired> kilometers
                         </li>
                         <li>
                             number of seats: <input class="rounded" [ngClass]="seats_input_CSS_class" type="number" [(ngModel)]="vehicleCopy.seats" min="1" max="100"
@@ -39,7 +39,7 @@
                         </li>
                         <li>
                             has air conditioning: <input class="rounded" [ngClass]="hasAirConditioning_input_CSS_class" type="boolean" [(ngModel)]="vehicleCopy.hasAirConditioning"
-                                requeired>
+                                title="type true or false." requeired>
                         </li>
                         <div [ngSwitch]="vehicleCopy.type">
 

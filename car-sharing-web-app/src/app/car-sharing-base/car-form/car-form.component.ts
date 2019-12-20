@@ -111,13 +111,15 @@ export class CarFormComponent implements OnInit, OnChanges {
   }
 
   checkCarMileage(): boolean {
-    if (this.vehicleCopy.car_mileage_in_kilometers >= 0
+    if (this.vehicleCopy.car_mileage_in_kilometers >= 50
       &&
-      this.vehicleCopy.car_mileage_in_kilometers < 100000) {
+      this.vehicleCopy.car_mileage_in_kilometers < 1000000) {
+        console.log("true"+this.vehicleCopy.car_mileage_in_kilometers);
       this.car_mileage_in_kilometers_input_CSS_class = this.success_class;
       return true;
     }
     else {
+      console.log("false"+this.vehicleCopy.car_mileage_in_kilometers);
       this.car_mileage_in_kilometers_input_CSS_class = this.error_class;
       return false;
     }
